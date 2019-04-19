@@ -35,7 +35,7 @@ if __name__ == '__main__':
             # print(f'{response.getcode()}')
             the_page = response.read()
     except OSError as err:
-        print(f'{err.code}')
+        print(f'{err}')
         print(f'Pau no seu cu vacilao')
         exit()
 
