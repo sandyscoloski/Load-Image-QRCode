@@ -27,12 +27,17 @@ if __name__ == '__main__':
     for barcode in barcodes:
         barcodeData = barcode.data.decode("utf-8")
         barcodeType = barcode.type
-        # print(f'[INFO] Found {barcodeType} barcode: {barcodeData}')
+        print(f'[INFO] Found {barcodeType} barcode: {barcodeData}')
 
     # get the page content from url
-    req = urllib.request.Request(barcodeData)
-    with urllib.request.urlopen(req) as response:
-        the_page = response.read()
+    try:
+        with urllib.request.urlopen(barcodeData) as response:
+            # print(f'{response.getcode()}')
+            the_page = response.read()
+    except OSError as err:
+        print(f'{err.code}')
+        print(f'Pau no seu cu vacilao')
+        exit()
 
     # converts the content page from image and save a temp image
     img = Image.open(BytesIO(the_page))
