@@ -7,4 +7,4 @@ About _**qrcode_loader.py**_ :
    license from the site. If you try to load *qrcode_paisagem.png* you will see that.
 
 About _**qrcode_loader_video.py**_ :
-1. This script is the same of the *qrcode_loader*, but it is with video capture from a camera.
+1. This script is the same of the *qrcode_loader*, but it works with video capture from a camera.
